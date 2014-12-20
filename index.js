@@ -14,8 +14,8 @@
 
 
 /**
- * @constructor Queue([options, ]reducer)
- * @param {Object} options
+ * @constructor Queue([cocurrency, ]reducer)
+ * @param {Number} cocurrency
  * @param {Function} reducer
  *
  * @options
@@ -27,13 +27,13 @@
  *   @param {Mixed} task
  *   @param {Function} done
  */
-function Queue(options, reducer) {
-  if (arguments.length === 1 && typeof options === 'function') {
-    reducer = options;
-    options = {};
+function Queue(cocurrency, reducer) {
+  if (cocurrency && !reducer) {
+    reducer = cocurrency;
+    cocurrency = 1;
   }
 
-  this.cocurrency = options.cocurrency || 1;
+  this.cocurrency = cocurrency;
   this.reducer = reducer;
 
   this.__queue = [];
@@ -58,6 +58,11 @@ Queue.prototype.__reduce = function() {
   var self = this;
   while (this.__pending < this.cocurrency) {
     var task = this.__queue.shift();
+
+    if (!task) {
+      break;
+    }
+
     this.__pending++;
 
     this.reducer(task, function() {

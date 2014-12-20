@@ -1,0 +1,13 @@
+{
+  "name": "block-queue",
+  "version": "0.0.1",
+  "description": "Nodejs in-process blocking FIFO queue implementation.",
+  "keywords": [
+    "queue",
+    "blocking",
+    "in-process",
+    "FIFO"
+  ],
+  "license": "MIT",
+  "repository": "hit9/node-block-queue"
+}
