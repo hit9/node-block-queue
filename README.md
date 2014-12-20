@@ -1,7 +1,7 @@
 Nodejs Blocking Queue
 ----------------------
 
-Simple in-process blocking FIFO queue implementation for nodejs.
+Nodejs in-process blocking FIFO queue implementation.
 
 ```
 npm install block-queue
@@ -13,7 +13,7 @@ Example
 ```js
 var queue = require('block-queue');
 
-var q = queue({cocurrency: 10}, function(task, done) {
+var q = queue({cocurrency: 1}, function(task, done) {
     // working on task..
     done();
 });
