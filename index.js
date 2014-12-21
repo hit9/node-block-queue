@@ -72,6 +72,15 @@ Queue.prototype.__reduce = function() {
   }
 };
 
+
+/**
+ * @public q.clear()
+ */
+Queue.prototype.clear = function() {
+  this.__queue = [];
+};
+
+
 exports = module.exports = function(options, reducer) {
   return new Queue(options, reducer);
 };

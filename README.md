@@ -37,6 +37,8 @@ API Ref
 
    - **task**, *mixed*, required.
 
+### queue.clear()
+
 License
 -------
 
