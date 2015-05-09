@@ -3,6 +3,8 @@ Nodejs Blocking Queue
 
 Nodejs in-process blocking FIFO queue implementation.
 
+Queue with max cocurrency.
+
 ```
 npm install block-queue
 ```
